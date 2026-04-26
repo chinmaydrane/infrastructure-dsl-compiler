@@ -1,0 +1,57 @@
+{
+  "version": "1.0",
+  "metadata": {
+    "generated_at": "2026-03-27T17:12:05.836197",
+    "compiler_version": "1.0.0",
+    "dsl_version": "1.0.0",
+    "resource_count": 1,
+    "connection_count": 0,
+    "policy_count": 0,
+    "role_count": 0
+  },
+  "resources": {
+    "web_server": {
+      "type": "server",
+      "name": "web_server",
+      "attributes": {
+        "cpu": {
+          "type": "literal",
+          "value": 2,
+          "literal_type": "integer",
+          "metadata": {
+            "line": 2,
+            "column": 11
+          }
+        },
+        "memory": {
+          "type": "literal",
+          "value": 4,
+          "literal_type": "integer",
+          "metadata": {
+            "line": 3,
+            "column": 14
+          }
+        },
+        "os": {
+          "type": "literal",
+          "value": "ubuntu-20.04",
+          "literal_type": "string",
+          "metadata": {
+            "line": 4,
+            "column": 10
+          }
+        }
+      },
+      "metadata": {
+        "line": 1,
+        "column": 1
+      }
+    }
+  },
+  "connections": [],
+  "policies": {},
+  "roles": {},
+  "modules": {},
+  "variables": {},
+  "constants": {}
+}

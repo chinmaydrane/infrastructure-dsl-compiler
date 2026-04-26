@@ -1,0 +1,104 @@
+{
+  "version": "1.0",
+  "metadata": {
+    "generated_at": "2026-03-27T17:13:37.933469",
+    "compiler_version": "1.0.0",
+    "dsl_version": "1.0.0",
+    "resource_count": 3,
+    "connection_count": 0,
+    "policy_count": 0,
+    "role_count": 0
+  },
+  "resources": {
+    "web_server": {
+      "type": "server",
+      "name": "web_server",
+      "attributes": {
+        "cpu": {
+          "type": "literal",
+          "value": 2,
+          "literal_type": "integer",
+          "metadata": {
+            "line": 2,
+            "column": 11
+          }
+        },
+        "memory": {
+          "type": "literal",
+          "value": 4,
+          "literal_type": "integer",
+          "metadata": {
+            "line": 3,
+            "column": 14
+          }
+        }
+      },
+      "metadata": {
+        "line": 1,
+        "column": 1
+      }
+    },
+    "backup_server": {
+      "type": "server",
+      "name": "backup_server",
+      "attributes": {
+        "cpu": {
+          "type": "literal",
+          "value": 1,
+          "literal_type": "integer",
+          "metadata": {
+            "line": 8,
+            "column": 15
+          }
+        },
+        "memory": {
+          "type": "literal",
+          "value": 2,
+          "literal_type": "integer",
+          "metadata": {
+            "line": 9,
+            "column": 18
+          }
+        }
+      },
+      "metadata": {
+        "line": 7,
+        "column": 5
+      }
+    },
+    "test_server": {
+      "type": "server",
+      "name": "test_server",
+      "attributes": {
+        "cpu": {
+          "type": "literal",
+          "value": 4,
+          "literal_type": "integer",
+          "metadata": {
+            "line": 13,
+            "column": 15
+          }
+        },
+        "memory": {
+          "type": "literal",
+          "value": 8,
+          "literal_type": "integer",
+          "metadata": {
+            "line": 14,
+            "column": 18
+          }
+        }
+      },
+      "metadata": {
+        "line": 12,
+        "column": 5
+      }
+    }
+  },
+  "connections": [],
+  "policies": {},
+  "roles": {},
+  "modules": {},
+  "variables": {},
+  "constants": {}
+}
