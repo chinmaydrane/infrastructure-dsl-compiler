@@ -1,0 +1,30 @@
+{
+  "status": "FAILED",
+  "input_file": "input\\demo_semantic_errors.dsl",
+  "error_summary": {
+    "total_errors": 3,
+    "lexical_errors": 0,
+    "syntax_errors": 3,
+    "semantic_errors": 0
+  },
+  "errors": [
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 15, Column 9 (Position 291): [ERROR] Line 15, Column 22 (Position 304): Expected ARROW, got TO",
+      "line": 15,
+      "column": 9
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 19, Column 11 (Position 448): [ERROR] Line 19, Column 30 (Position 467): Expected IDENTIFIER, got COMMENT",
+      "line": 19,
+      "column": 11
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 19, Column 30: Failed to parse attribute: [ERROR] Line 19, Column 30 (Position 467): Expected IDENTIFIER, got COMMENT",
+      "line": 19,
+      "column": 30
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "status": "FAILED",
+  "input_file": "input\\demo_syntax_errors_fixed.dsl",
+  "error_summary": {
+    "total_errors": 6,
+    "lexical_errors": 0,
+    "syntax_errors": 6,
+    "semantic_errors": 0
+  },
+  "errors": [
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 5, Column 11 (Position 135): [ERROR] Line 5, Column 31 (Position 155): Expected IDENTIFIER, got COMMENT",
+      "line": 5,
+      "column": 11
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 5, Column 31: Failed to parse attribute: [ERROR] Line 5, Column 31 (Position 155): Expected IDENTIFIER, got COMMENT",
+      "line": 5,
+      "column": 31
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 10, Column 10 (Position 249): [ERROR] Line 10, Column 31 (Position 270): Expected IDENTIFIER, got COMMENT",
+      "line": 10,
+      "column": 10
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 10, Column 31: Failed to parse attribute: [ERROR] Line 10, Column 31 (Position 270): Expected IDENTIFIER, got COMMENT",
+      "line": 10,
+      "column": 31
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 16, Column 10 (Position 390): [ERROR] Line 16, Column 30 (Position 410): Expected IDENTIFIER, got COMMENT",
+      "line": 16,
+      "column": 10
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 16, Column 30: Failed to parse attribute: [ERROR] Line 16, Column 30 (Position 410): Expected IDENTIFIER, got COMMENT",
+      "line": 16,
+      "column": 30
+    }
+  ]
+}

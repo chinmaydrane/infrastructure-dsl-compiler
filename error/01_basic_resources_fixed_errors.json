@@ -1,0 +1,30 @@
+{
+  "status": "FAILED",
+  "input_file": "input\\01_basic_resources_fixed.dsl",
+  "error_summary": {
+    "total_errors": 3,
+    "lexical_errors": 0,
+    "syntax_errors": 3,
+    "semantic_errors": 0
+  },
+  "errors": [
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 25, Column 26 (Position 481): [ERROR] Line 26, Column 13 (Position 494): Expected ASSIGN_OP, got LBRACE",
+      "line": 25,
+      "column": 26
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 26, Column 13: Failed to parse attribute: [ERROR] Line 26, Column 13 (Position 494): Expected ASSIGN_OP, got LBRACE",
+      "line": 26,
+      "column": 13
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 31, Column 6 (Position 606): [ERROR] Line 32, Column 12 (Position 618): Expected ASSIGN_OP, got LBRACE",
+      "line": 31,
+      "column": 6
+    }
+  ]
+}

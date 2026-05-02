@@ -1,0 +1,18 @@
+{
+  "status": "FAILED",
+  "input_file": "input\\02_complex_expressions_simple.dsl",
+  "error_summary": {
+    "total_errors": 1,
+    "lexical_errors": 0,
+    "syntax_errors": 1,
+    "semantic_errors": 0
+  },
+  "errors": [
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 24, Column 1 (Position 470): [ERROR] Line 25, Column 15 (Position 485): Expected IDENTIFIER, got STRING",
+      "line": 24,
+      "column": 1
+    }
+  ]
+}

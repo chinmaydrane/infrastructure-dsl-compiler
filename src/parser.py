@@ -39,6 +39,11 @@ class Parser:
             
             # Parse compilation units until EOF
             while not self.token_stream.is_at_end():
+                # Skip whitespace and newlines
+                self._skip_whitespace_and_newlines()
+                if self.token_stream.is_at_end():
+                    break
+                    
                 unit = self._parse_compilation_unit()
                 if unit:
                     program.add_compilation_unit(unit)
@@ -75,6 +80,11 @@ class Parser:
                            self.current_token.position if self.current_token else -1)
             )
             raise
+    
+    def _skip_whitespace_and_newlines(self):
+        """Skip whitespace and newline tokens."""
+        while self._match(TokenType.NEWLINE, TokenType.WHITESPACE):
+            self._advance()
     
     def _parse_compilation_unit(self) -> Optional[CompilationUnitNode]:
         """Parse a compilation unit."""
@@ -172,21 +182,42 @@ class Parser:
     def _parse_network_declaration(self) -> NetworkNode:
         """Parse network declaration."""
         token = self._expect(TokenType.NETWORK)
-        identifier = self._parse_identifier()
+        # Resource names can be quoted strings or identifiers
+        if self._match(TokenType.STRING):
+            name_token = self.token_stream.current()
+            self._advance()
+            identifier = name_token.value.strip('"')
+        else:
+            identifier_node = self._parse_identifier()
+            identifier = identifier_node.name
         attributes = self._parse_resource_block()
         return NetworkNode(identifier, attributes, token.line, token.column)
     
     def _parse_database_declaration(self, db_type: str = "database") -> DatabaseNode:
         """Parse database declaration."""
         token = self._expect(TokenType.DATABASE if db_type == "database" else TokenType.NOSQL_DB)
-        identifier = self._parse_identifier()
+        # Resource names can be quoted strings or identifiers
+        if self._match(TokenType.STRING):
+            name_token = self.token_stream.current()
+            self._advance()
+            identifier = name_token.value.strip('"')
+        else:
+            identifier_node = self._parse_identifier()
+            identifier = identifier_node.name
         attributes = self._parse_resource_block()
         return DatabaseNode(db_type, identifier, attributes, token.line, token.column)
     
     def _parse_security_group_declaration(self) -> SecurityGroupNode:
         """Parse security group declaration."""
         token = self._expect(TokenType.SECURITY_GROUP)
-        identifier = self._parse_identifier()
+        # Resource names can be quoted strings or identifiers
+        if self._match(TokenType.STRING):
+            name_token = self.token_stream.current()
+            self._advance()
+            identifier = name_token.value.strip('"')
+        else:
+            identifier_node = self._parse_identifier()
+            identifier = identifier_node.name
         attributes = self._parse_resource_block()
         return SecurityGroupNode(identifier, attributes, token.line, token.column)
     
@@ -221,7 +252,14 @@ class Parser:
     def _parse_subnet_declaration(self) -> SubnetNode:
         """Parse subnet declaration."""
         token = self._expect(TokenType.SUBNET)
-        identifier = self._parse_identifier()
+        # Resource names can be quoted strings or identifiers
+        if self._match(TokenType.STRING):
+            name_token = self.token_stream.current()
+            self._advance()
+            identifier = name_token.value.strip('"')
+        else:
+            identifier_node = self._parse_identifier()
+            identifier = identifier_node.name
         attributes = self._parse_resource_block()
         return SubnetNode(identifier, attributes, token.line, token.column)
     
@@ -231,6 +269,11 @@ class Parser:
         attributes = []
         
         while not self._match(TokenType.RBRACE) and not self.token_stream.is_at_end():
+            # Skip whitespace and newlines
+            self._skip_whitespace_and_newlines()
+            if self._match(TokenType.RBRACE):
+                break
+                
             attr = self._parse_attribute()
             if attr:
                 attributes.append(attr)
@@ -248,9 +291,18 @@ class Parser:
     def _parse_attribute(self) -> Optional[AttributeNode]:
         """Parse attribute assignment."""
         try:
+            # Skip whitespace and newlines before parsing
+            self._skip_whitespace_and_newlines()
             name = self._parse_identifier()
+            
+            # Skip whitespace and newlines after identifier
+            self._skip_whitespace_and_newlines()
             self._expect(TokenType.ASSIGN_OP)
+            
+            # Skip whitespace and newlines after assignment operator
+            self._skip_whitespace_and_newlines()
             value = self._parse_expression()
+            
             return AttributeNode(name, value, name.line, name.column)
         except Exception as e:
             self.error_handler.add_error(
@@ -687,9 +739,40 @@ class Parser:
             return identifier
     
     def _parse_identifier(self) -> IdentifierNode:
-        """Parse identifier."""
-        token = self._expect(TokenType.IDENTIFIER)
-        return IdentifierNode(token.value, token.line, token.column)
+        """Parse identifier (including attribute names like 'cpu', 'memory', etc.)."""
+        # Handle all attribute name tokens that were removed from keywords
+        special_tokens = [
+            TokenType.CPU, TokenType.MEMORY, TokenType.OS, TokenType.ENGINE,
+            TokenType.VERSION, TokenType.STORAGE, TokenType.INSTANCE_CLASS,
+            TokenType.CIDR_BLOCK, TokenType.ENABLE_DNS_HOSTNAMES, TokenType.ENABLE_DNS_SUPPORT,
+            TokenType.AVAILABILITY_ZONE, TokenType.PUBLIC, TokenType.MAP_PUBLIC_IP_ON_LAUNCH,
+            TokenType.INGRESS, TokenType.EGRESS, TokenType.FROM_PORT, TokenType.TO_PORT,
+            TokenType.PROTOCOL, TokenType.SECURITY_GROUPS, TokenType.CIDR_BLOCKS, TokenType.VPC,
+            TokenType.SUBNET_GROUP, TokenType.VPC_SECURITY_GROUP_IDS, TokenType.NODE_TYPE,
+            TokenType.NUM_CACHE_NODES, TokenType.PORT, TokenType.SUBNET_GROUP_NAME,
+            TokenType.AUTOMATIC_FAILOVER, TokenType.MULTI_AZ_ENABLED, TokenType.READ_REPLICA_COUNT,
+            TokenType.MULTI_AZ, TokenType.BACKUP_WINDOW, TokenType.MAINTENANCE_WINDOW,
+            TokenType.STORAGE_TYPE, TokenType.STORAGE_ENCRYPTED, TokenType.PARAMETERS,
+            TokenType.TAGS, TokenType.ENABLED, TokenType.MONITORING, TokenType.ALGORITHM,
+            TokenType.TARGET_SERVERS, TokenType.LISTENERS, TokenType.CERTIFICATE_ARN,
+            TokenType.DEFAULT_ACTION, TokenType.HEALTH_CHECK, TokenType.PATH,
+            TokenType.INTERVAL, TokenType.TIMEOUT, TokenType.HEALTHY_THRESHOLD,
+            TokenType.UNHEALTHY_THRESHOLD, TokenType.METRIC, TokenType.THRESHOLD,
+            TokenType.COMPARISON, TokenType.STATISTIC, TokenType.PERIOD,
+            TokenType.EVALUATION_PERIODS, TokenType.ADJUSTMENT_TYPE, TokenType.SCALING_ADJUSTMENT,
+            TokenType.COLD_STORAGE_AFTER_DAYS, TokenType.DELETE_AFTER_DAYS, TokenType.LIFECYCLE,
+            TokenType.BACKUP_RETENTION, TokenType.SCALE_UP_COOLDOWN, TokenType.SCALE_DOWN_COOLDOWN,
+            TokenType.LOG_GROUPS, TokenType.LOG_STREAMS, TokenType.MIN_INSTANCES,
+            TokenType.MAX_INSTANCES, TokenType.DESIRED_CAPACITY
+        ]
+        
+        if self._match(*special_tokens):
+            token = self.token_stream.current()
+            self._advance()
+            return IdentifierNode(token.type.name.lower(), token.line, token.column)
+        else:
+            token = self._expect(TokenType.IDENTIFIER)
+            return IdentifierNode(token.value, token.line, token.column)
     
     def _parse_array_literal(self) -> ArrayLiteralNode:
         """Parse array literal."""
@@ -746,18 +829,4 @@ class Parser:
         self._expect(TokenType.RBRACKET)
         return ArrayAccessNode(array_expr, index, array_expr.line, array_expr.column)
     
-    def _parse_identifier(self) -> IdentifierNode:
-        """Parse identifier (including attribute names like 'cpu', 'memory', etc.)."""
-        # Handle special attribute name tokens
-        special_tokens = [
-            TokenType.CPU, TokenType.MEMORY, TokenType.OS, TokenType.ENGINE,
-            TokenType.VERSION, TokenType.STORAGE, TokenType.INSTANCE_CLASS
-        ]
-        
-        if self._match(*special_tokens):
-            token = self.token_stream.current()
-            self._advance()
-            return IdentifierNode(token.type.name.lower(), token.line, token.column)
-        else:
-            token = self._expect(TokenType.IDENTIFIER)
-            return IdentifierNode(token.value, token.line, token.column)
+    

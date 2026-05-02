@@ -1,0 +1,382 @@
+/* Infrastructure DSL Playground - VS Code Light Theme */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'Segoe UI Variable', 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #ffffff;
+    color: #333333;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Header */
+.header {
+    background-color: #f3f3f3;
+    border-bottom: 1px solid #e1e1e1;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 60px;
+}
+
+.header h1 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333333;
+}
+
+.header-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.compile-btn {
+    background-color: #007acc;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.compile-btn:hover {
+    background-color: #005a9e;
+}
+
+.compile-btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.clear-btn {
+    background-color: #f3f3f3;
+    color: #333333;
+    border: 1px solid #d1d1d1;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.clear-btn:hover {
+    background-color: #e1e1e1;
+}
+
+/* Main Content */
+.main-content {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+/* Panels */
+.editor-panel,
+.output-panel {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.editor-panel {
+    border-right: 1px solid #e1e1e1;
+}
+
+.panel-header {
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #e1e1e1;
+    padding: 8px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 40px;
+}
+
+.panel-header h2 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333333;
+}
+
+.editor-info,
+.output-info {
+    display: flex;
+    gap: 16px;
+    font-size: 12px;
+    color: #666666;
+}
+
+.output-status {
+    font-weight: 500;
+}
+
+.output-status.success {
+    color: #008000;
+}
+
+.output-status.error {
+    color: #d73a49;
+}
+
+.output-status.loading {
+    color: #007acc;
+}
+
+.copy-btn {
+    background-color: #f3f3f3;
+    color: #333333;
+    border: 1px solid #d1d1d1;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.copy-btn:hover {
+    background-color: #e1e1e1;
+}
+
+/* Editor Container */
+.editor-container {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+#editor {
+    width: 100%;
+    height: 100%;
+}
+
+/* Output Container */
+.output-container {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+.output-content {
+    width: 100%;
+    height: 100%;
+    padding: 16px;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.4;
+    white-space: pre-wrap;
+    overflow: auto;
+    background-color: #ffffff;
+    color: #333333;
+    border: none;
+    resize: none;
+    outline: none;
+}
+
+.output-content.error {
+    color: #d73a49;
+    background-color: #fff5f5;
+}
+
+.output-content:empty::before {
+    content: "JSON output will appear here...";
+    color: #999999;
+    font-style: italic;
+}
+
+/* Loading Overlay */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.loading-spinner {
+    text-align: center;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #007acc;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 16px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading-spinner p {
+    color: #333333;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Error Modal */
+.modal {
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow: hidden;
+}
+
+.modal-header {
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #e1e1e1;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #d73a49;
+    margin: 0;
+}
+
+.close {
+    font-size: 24px;
+    font-weight: bold;
+    color: #666666;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.close:hover {
+    color: #333333;
+}
+
+.modal-body {
+    padding: 20px;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+#errorMessage {
+    font-size: 14px;
+    font-weight: 500;
+    color: #d73a49;
+    margin-bottom: 12px;
+}
+
+#errorDetails {
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 13px;
+    color: #333333;
+    background-color: #f8f8f8;
+    padding: 12px;
+    border-radius: 4px;
+    border-left: 4px solid #d73a49;
+    white-space: pre-wrap;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+    }
+    
+    .editor-panel {
+        border-right: none;
+        border-bottom: 1px solid #e1e1e1;
+    }
+    
+    .header {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+    
+    .header-actions {
+        justify-content: center;
+    }
+    
+    .panel-header {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+    
+    .editor-info,
+    .output-info {
+        justify-content: center;
+    }
+}
+
+/* Monaco Editor Customization */
+.monaco-editor {
+    background-color: #ffffff !important;
+}
+
+.monaco-editor .margin {
+    background-color: #f8f8f8 !important;
+}
+
+.monaco-editor .line-numbers {
+    color: #666666 !important;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f3f3f3;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cccccc;
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #b3b3b3;
+}

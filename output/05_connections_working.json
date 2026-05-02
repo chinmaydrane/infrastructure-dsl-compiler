@@ -1,0 +1,158 @@
+{
+  "version": "1.0",
+  "metadata": {
+    "generated_at": "2026-05-02T16:13:05.728114",
+    "compiler_version": "1.0.0",
+    "dsl_version": "1.0.0",
+    "resource_count": 3,
+    "connection_count": 0,
+    "policy_count": 0,
+    "role_count": 0
+  },
+  "resources": {
+    "web_server": {
+      "type": "server",
+      "name": "web_server",
+      "attributes": {
+        "cpu": {
+          "type": "literal",
+          "value": 2,
+          "literal_type": "integer",
+          "metadata": {
+            "line": 5,
+            "column": 11
+          }
+        },
+        "memory": {
+          "type": "literal",
+          "value": "4GB",
+          "literal_type": "string",
+          "metadata": {
+            "line": 6,
+            "column": 14
+          }
+        },
+        "os": {
+          "type": "literal",
+          "value": "ubuntu-20.04",
+          "literal_type": "string",
+          "metadata": {
+            "line": 7,
+            "column": 10
+          }
+        },
+        "enabled": {
+          "type": "literal",
+          "value": true,
+          "literal_type": "boolean",
+          "metadata": {
+            "line": 8,
+            "column": 15
+          }
+        }
+      },
+      "metadata": {
+        "line": 4,
+        "column": 1
+      }
+    },
+    "primary_db": {
+      "type": "database",
+      "name": "primary_db",
+      "attributes": {
+        "engine": {
+          "type": "literal",
+          "value": "mysql",
+          "literal_type": "string",
+          "metadata": {
+            "line": 12,
+            "column": 14
+          }
+        },
+        "version": {
+          "type": "literal",
+          "value": "8.0",
+          "literal_type": "string",
+          "metadata": {
+            "line": 13,
+            "column": 15
+          }
+        },
+        "storage": {
+          "type": "literal",
+          "value": "100GB",
+          "literal_type": "string",
+          "metadata": {
+            "line": 14,
+            "column": 15
+          }
+        },
+        "instance_class": {
+          "type": "literal",
+          "value": "db.t3.medium",
+          "literal_type": "string",
+          "metadata": {
+            "line": 15,
+            "column": 22
+          }
+        },
+        "backup_retention": {
+          "type": "literal",
+          "value": 7,
+          "literal_type": "integer",
+          "metadata": {
+            "line": 16,
+            "column": 24
+          }
+        }
+      },
+      "metadata": {
+        "line": 11,
+        "column": 1
+      }
+    },
+    "vpc_main": {
+      "type": "network",
+      "name": "vpc_main",
+      "attributes": {
+        "cidr_block": {
+          "type": "literal",
+          "value": "10.0.0.0/16",
+          "literal_type": "string",
+          "metadata": {
+            "line": 20,
+            "column": 18
+          }
+        },
+        "enable_dns_hostnames": {
+          "type": "literal",
+          "value": true,
+          "literal_type": "boolean",
+          "metadata": {
+            "line": 21,
+            "column": 28
+          }
+        },
+        "enable_dns_support": {
+          "type": "literal",
+          "value": true,
+          "literal_type": "boolean",
+          "metadata": {
+            "line": 22,
+            "column": 26
+          }
+        }
+      },
+      "metadata": {
+        "line": 19,
+        "column": 1
+      }
+    }
+  },
+  "connections": [],
+  "policies": {},
+  "roles": {},
+  "modules": {},
+  "variables": {},
+  "constants": {}
+}

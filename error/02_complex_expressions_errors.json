@@ -1,0 +1,222 @@
+{
+  "status": "FAILED",
+  "input_file": "input\\02_complex_expressions.dsl",
+  "error_summary": {
+    "total_errors": 35,
+    "lexical_errors": 0,
+    "syntax_errors": 35,
+    "semantic_errors": 0
+  },
+  "errors": [
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 6, Column 17 (Position 141): [ERROR] Line 7, Column 5 (Position 146): Expected ASSIGN_OP, got IDENTIFIER",
+      "line": 6,
+      "column": 17
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 7, Column 5: Failed to parse attribute: [ERROR] Line 7, Column 5 (Position 146): Expected ASSIGN_OP, got IDENTIFIER",
+      "line": 7,
+      "column": 5
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 7, Column 5 (Position 146): [ERROR] Line 7, Column 8 (Position 149): Expected IDENTIFIER, got ASSIGN_OP",
+      "line": 7,
+      "column": 5
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 7, Column 8: Failed to parse attribute: [ERROR] Line 7, Column 8 (Position 149): Expected IDENTIFIER, got ASSIGN_OP",
+      "line": 7,
+      "column": 8
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 7, Column 8 (Position 149): [ERROR] Line 7, Column 10 (Position 151): Expected IDENTIFIER, got STRING",
+      "line": 7,
+      "column": 8
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 7, Column 10: Failed to parse attribute: [ERROR] Line 7, Column 10 (Position 151): Expected IDENTIFIER, got STRING",
+      "line": 7,
+      "column": 10
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 9, Column 5 (Position 215): [ERROR] Line 10, Column 5 (Position 220): Expected IDENTIFIER, got COMMENT",
+      "line": 9,
+      "column": 5
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 10, Column 5: Failed to parse attribute: [ERROR] Line 10, Column 5 (Position 220): Expected IDENTIFIER, got COMMENT",
+      "line": 10,
+      "column": 5
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 11, Column 17: Failed to parse attribute: [ERROR] Line 10, Column 29 (Position 244): Expected object key, got \n",
+      "line": 11,
+      "column": 17
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 11, Column 17 (Position 261): [ERROR] Line 12, Column 9 (Position 270): Expected IDENTIFIER, got STRING",
+      "line": 11,
+      "column": 17
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 12, Column 9: Failed to parse attribute: [ERROR] Line 12, Column 9 (Position 270): Expected IDENTIFIER, got STRING",
+      "line": 12,
+      "column": 9
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 12, Column 9 (Position 270): [ERROR] Line 12, Column 22 (Position 283): Expected IDENTIFIER, got COLON",
+      "line": 12,
+      "column": 9
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 12, Column 22: Failed to parse attribute: [ERROR] Line 12, Column 22 (Position 283): Expected IDENTIFIER, got COLON",
+      "line": 12,
+      "column": 22
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 12, Column 22 (Position 283): [ERROR] Line 12, Column 24 (Position 285): Expected IDENTIFIER, got STRING",
+      "line": 12,
+      "column": 22
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 12, Column 24: Failed to parse attribute: [ERROR] Line 12, Column 24 (Position 285): Expected IDENTIFIER, got STRING",
+      "line": 12,
+      "column": 24
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 12, Column 36 (Position 297): [ERROR] Line 13, Column 9 (Position 306): Expected IDENTIFIER, got STRING",
+      "line": 12,
+      "column": 36
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 13, Column 9: Failed to parse attribute: [ERROR] Line 13, Column 9 (Position 306): Expected IDENTIFIER, got STRING",
+      "line": 13,
+      "column": 9
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 13, Column 9 (Position 306): [ERROR] Line 13, Column 16 (Position 313): Expected IDENTIFIER, got COLON",
+      "line": 13,
+      "column": 9
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 13, Column 16: Failed to parse attribute: [ERROR] Line 13, Column 16 (Position 313): Expected IDENTIFIER, got COLON",
+      "line": 13,
+      "column": 16
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 13, Column 16 (Position 313): [ERROR] Line 13, Column 18 (Position 315): Expected IDENTIFIER, got STRING",
+      "line": 13,
+      "column": 16
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 13, Column 18: Failed to parse attribute: [ERROR] Line 13, Column 18 (Position 315): Expected IDENTIFIER, got STRING",
+      "line": 13,
+      "column": 18
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 13, Column 31 (Position 328): [ERROR] Line 14, Column 9 (Position 337): Expected IDENTIFIER, got STRING",
+      "line": 13,
+      "column": 31
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 14, Column 9: Failed to parse attribute: [ERROR] Line 14, Column 9 (Position 337): Expected IDENTIFIER, got STRING",
+      "line": 14,
+      "column": 9
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 14, Column 9 (Position 337): [ERROR] Line 14, Column 22 (Position 350): Expected IDENTIFIER, got COLON",
+      "line": 14,
+      "column": 9
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 14, Column 22: Failed to parse attribute: [ERROR] Line 14, Column 22 (Position 350): Expected IDENTIFIER, got COLON",
+      "line": 14,
+      "column": 22
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 14, Column 22 (Position 350): [ERROR] Line 14, Column 24 (Position 352): Expected IDENTIFIER, got STRING",
+      "line": 14,
+      "column": 22
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 14, Column 24: Failed to parse attribute: [ERROR] Line 14, Column 24 (Position 352): Expected IDENTIFIER, got STRING",
+      "line": 14,
+      "column": 24
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 14, Column 37 (Position 365): [ERROR] Line 15, Column 9 (Position 374): Expected IDENTIFIER, got STRING",
+      "line": 14,
+      "column": 37
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 15, Column 9: Failed to parse attribute: [ERROR] Line 15, Column 9 (Position 374): Expected IDENTIFIER, got STRING",
+      "line": 15,
+      "column": 9
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 15, Column 9 (Position 374): [ERROR] Line 15, Column 26 (Position 391): Expected IDENTIFIER, got COLON",
+      "line": 15,
+      "column": 9
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 15, Column 26: Failed to parse attribute: [ERROR] Line 15, Column 26 (Position 391): Expected IDENTIFIER, got COLON",
+      "line": 15,
+      "column": 26
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 15, Column 26 (Position 391): [ERROR] Line 15, Column 28 (Position 393): Expected IDENTIFIER, got TRUE",
+      "line": 15,
+      "column": 26
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 15, Column 28: Failed to parse attribute: [ERROR] Line 15, Column 28 (Position 393): Expected IDENTIFIER, got TRUE",
+      "line": 15,
+      "column": 28
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 23, Column 17 (Position 606): [ERROR] Line 23, Column 22 (Position 611): Expected ASSIGN_OP, got NEWLINE",
+      "line": 23,
+      "column": 17
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 28, Column 42 (Position 700): [ERROR] Line 29, Column 15 (Position 715): Expected IDENTIFIER, got STRING",
+      "line": 28,
+      "column": 42
+    }
+  ]
+}

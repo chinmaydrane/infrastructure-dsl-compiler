@@ -1,0 +1,222 @@
+{
+  "version": "1.0",
+  "metadata": {
+    "generated_at": "2026-05-02T13:06:29.413762",
+    "compiler_version": "1.0.0",
+    "dsl_version": "1.0.0",
+    "resource_count": 4,
+    "connection_count": 0,
+    "policy_count": 0,
+    "role_count": 0
+  },
+  "resources": {
+    "web_server": {
+      "type": "server",
+      "name": "web_server",
+      "attributes": {
+        "cpu": {
+          "type": "literal",
+          "value": 4,
+          "literal_type": "integer",
+          "metadata": {
+            "line": 5,
+            "column": 11
+          }
+        },
+        "memory": {
+          "type": "literal",
+          "value": 8,
+          "literal_type": "integer",
+          "metadata": {
+            "line": 6,
+            "column": 14
+          }
+        },
+        "enabled": {
+          "type": "literal",
+          "value": true,
+          "literal_type": "boolean",
+          "metadata": {
+            "line": 8,
+            "column": 15
+          }
+        },
+        "tags": {
+          "type": "array_literal",
+          "elements": [
+            {
+              "type": "literal",
+              "value": "web",
+              "literal_type": "string",
+              "metadata": {
+                "line": 9,
+                "column": 13
+              }
+            },
+            {
+              "type": "literal",
+              "value": "production",
+              "literal_type": "string",
+              "metadata": {
+                "line": 9,
+                "column": 20
+              }
+            }
+          ],
+          "metadata": {
+            "line": 9,
+            "column": 12
+          }
+        }
+      },
+      "metadata": {
+        "line": 4,
+        "column": 1
+      }
+    },
+    "app_database": {
+      "type": "database",
+      "name": "app_database",
+      "attributes": {
+        "engine": {
+          "type": "literal",
+          "value": "mysql",
+          "literal_type": "string",
+          "metadata": {
+            "line": 13,
+            "column": 14
+          }
+        },
+        "version": {
+          "type": "literal",
+          "value": "8.0",
+          "literal_type": "string",
+          "metadata": {
+            "line": 14,
+            "column": 15
+          }
+        },
+        "storage": {
+          "type": "literal",
+          "value": 200,
+          "literal_type": "integer",
+          "metadata": {
+            "line": 15,
+            "column": 15
+          }
+        },
+        "backup_retention": {
+          "type": "literal",
+          "value": 30,
+          "literal_type": "integer",
+          "metadata": {
+            "line": 17,
+            "column": 24
+          }
+        }
+      },
+      "metadata": {
+        "line": 12,
+        "column": 1
+      }
+    },
+    "main_vpc": {
+      "type": "network",
+      "name": "main_vpc",
+      "attributes": {
+        "cidr_block": {
+          "type": "literal",
+          "value": "10.0.0.0/16",
+          "literal_type": "string",
+          "metadata": {
+            "line": 21,
+            "column": 18
+          }
+        },
+        "enable_dns_hostnames": {
+          "type": "literal",
+          "value": true,
+          "literal_type": "boolean",
+          "metadata": {
+            "line": 22,
+            "column": 28
+          }
+        },
+        "enable_dns_support": {
+          "type": "literal",
+          "value": true,
+          "literal_type": "boolean",
+          "metadata": {
+            "line": 23,
+            "column": 26
+          }
+        }
+      },
+      "metadata": {
+        "line": 20,
+        "column": 1
+      }
+    },
+    "backup_server": {
+      "type": "server",
+      "name": "backup_server",
+      "attributes": {
+        "cpu": {
+          "type": "literal",
+          "value": 2,
+          "literal_type": "integer",
+          "metadata": {
+            "line": 28,
+            "column": 15
+          }
+        },
+        "memory": {
+          "type": "literal",
+          "value": 4,
+          "literal_type": "integer",
+          "metadata": {
+            "line": 29,
+            "column": 18
+          }
+        },
+        "tags": {
+          "type": "array_literal",
+          "elements": [
+            {
+              "type": "literal",
+              "value": "backup",
+              "literal_type": "string",
+              "metadata": {
+                "line": 31,
+                "column": 17
+              }
+            },
+            {
+              "type": "literal",
+              "value": "secondary",
+              "literal_type": "string",
+              "metadata": {
+                "line": 31,
+                "column": 27
+              }
+            }
+          ],
+          "metadata": {
+            "line": 31,
+            "column": 16
+          }
+        }
+      },
+      "metadata": {
+        "line": 27,
+        "column": 5
+      }
+    }
+  },
+  "connections": [],
+  "policies": {},
+  "roles": {},
+  "modules": {},
+  "variables": {},
+  "constants": {}
+}

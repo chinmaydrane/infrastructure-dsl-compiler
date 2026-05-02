@@ -564,7 +564,10 @@ class TypeChecker:
         if context:
             error_msg += f" in {context}"
         error_msg += f": cannot assign {source_type} to {target_type}"
-        self.errors.append(error_msg)
+        # Create a proper error object instead of appending string
+        from src.error_handler import SemanticError
+        semantic_error = SemanticError(error_msg, -1, -1, -1)
+        self.errors.append(semantic_error)
         return False
     
     def check_attribute_type(self, resource_type: str, attribute_name: str, 
@@ -584,11 +587,17 @@ class TypeChecker:
         valid_attributes = self._get_valid_attributes()
         
         if resource_type not in valid_attributes:
-            self.errors.append(f"Unknown resource type: {resource_type}")
+            # Create a proper error object instead of appending string
+            from src.error_handler import SemanticError
+            semantic_error = SemanticError(f"Unknown resource type: {resource_type}", -1, -1, -1)
+            self.errors.append(semantic_error)
             return False
         
         if attribute_name not in valid_attributes[resource_type]:
-            self.errors.append(f"Invalid attribute '{attribute_name}' for resource type '{resource_type}'")
+            # Create a proper error object instead of appending string
+            from src.error_handler import SemanticError
+            semantic_error = SemanticError(f"Invalid attribute '{attribute_name}' for resource type '{resource_type}'", -1, -1, -1)
+            self.errors.append(semantic_error)
             return False
         
         expected_type = valid_attributes[resource_type][attribute_name]

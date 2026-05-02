@@ -45,22 +45,31 @@ class SemanticAnalyzer(ASTVisitor):
         self.function_references: List[str] = []
         self.role_references: List[str] = []
     
-    def analyze(self, ast: ProgramNode) -> bool:
+    def _get_string_value(self, value) -> str:
+        """Safely extract string value from node or return string."""
+        if isinstance(value, str):
+            return value
+        elif hasattr(value, 'name'):
+            return str(value.name)
+        else:
+            return str(value)
+    
+    def analyze(self, node: ASTNode) -> bool:
         """
         Perform semantic analysis on the AST.
         
         Args:
-            ast: Abstract syntax tree
+            node: Abstract syntax tree
             
         Returns:
             True if analysis passed without errors
         """
         try:
             # First pass: collect symbols
-            self._collect_symbols(ast)
+            self._collect_symbols(node)
             
             # Second pass: validate references and types
-            self._validate_ast(ast)
+            self._validate_ast(node)
             
             # Check for unused symbols
             self._check_unused_symbols()
@@ -90,8 +99,10 @@ class SemanticAnalyzer(ASTVisitor):
         """Check for unused symbols and report warnings."""
         unused_symbols = self.symbol_table.find_unused_symbols()
         for symbol in unused_symbols:
+            from src.error_handler import CompilerWarning
+            warning_msg = f"Unused symbol: {symbol.name} (defined at line {symbol.line})"
             self.error_handler.add_warning(
-                f"Unused symbol: {symbol.name} (defined at line {symbol.line})"
+                CompilerWarning(warning_msg, symbol.line, -1, -1)
             )
     
     def _check_undefined_references(self):
@@ -173,33 +184,27 @@ class SemanticAnalyzer(ASTVisitor):
         """Visit subnet declaration."""
         self._declare_resource(node, SymbolType.SUBNET)
     
-    def visit_module_declaration(self, node: ModuleDeclarationNode):
+    def visit_module_declaration(self, node: ModuleDeclarationNode) -> Any:
         """Visit module declaration."""
         # Check for duplicate module
-        if node.name in self.defined_modules:
+        module_name = self._get_string_value(node.name)
+        if module_name in self.defined_modules:
             self.error_handler.add_error(
-                SemanticError(f"Duplicate module declaration: {node.name}", node.line, node.column, -1)
+                SemanticError(f"Duplicate module declaration: {module_name}", node.line, node.column, -1)
             )
             return
         
-        # Create module type info
-        module_type = TypeInfo(DataType.OBJECT)
+        module_type = TypeInfo(DataType.MODULE)
         
-        # Define module symbol
         if not self.symbol_table.define_symbol(
-            node.name, SymbolType.MODULE, module_type, node.line, node.column, node
+            module_name, SymbolType.MODULE, module_type, node.line, node.column, node
         ):
             self.error_handler.add_error(
-                SemanticError(f"Module already defined: {node.name}", node.line, node.column, -1)
+                SemanticError(f"Module already defined: {module_name}", node.line, node.column, -1)
             )
             return
         
-        self.defined_modules[node.name] = node
-        
-        # Enter module scope
-        old_scope = self.current_scope
-        self.current_scope = self.symbol_table.enter_scope(f"module_{node.name}")
-        self.module_depth += 1
+        self.defined_modules[module_name] = node
         
         # Define parameters
         for param in node.parameters:
@@ -210,6 +215,11 @@ class SemanticAnalyzer(ASTVisitor):
                 self.error_handler.add_error(
                     SemanticError(f"Parameter already defined: {param.name}", param.line, param.column, -1)
                 )
+        
+        # Enter module scope
+        old_scope = self.current_scope
+        self.current_scope = self.symbol_table.enter_scope(f"module_{module_name}")
+        self.module_depth += 1
         
         # Visit module body
         for stmt in node.statements:
@@ -458,25 +468,24 @@ class SemanticAnalyzer(ASTVisitor):
     def _declare_resource(self, node: ResourceDeclarationNode, symbol_type: SymbolType):
         """Declare a resource symbol."""
         # Check for duplicate resource
-        if node.identifier in self.defined_resources:
+        resource_name = self._get_string_value(node.identifier)
+        if resource_name in self.defined_resources:
             self.error_handler.add_error(
-                SemanticError(f"Duplicate resource declaration: {node.identifier}", node.line, node.column, -1)
+                SemanticError(f"Duplicate resource declaration: {resource_name}", node.line, node.column, -1)
             )
             return
         
-        # Create resource type info
         resource_type = TypeInfo(DataType.OBJECT)
         
-        # Define resource symbol
         if not self.symbol_table.define_symbol(
-            node.identifier, symbol_type, resource_type, node.line, node.column, node
+            resource_name, symbol_type, resource_type, node.line, node.column, node
         ):
             self.error_handler.add_error(
-                SemanticError(f"Resource already defined: {node.identifier}", node.line, node.column, -1)
+                SemanticError(f"Resource already defined: {resource_name}", node.line, node.column, -1)
             )
             return
         
-        self.defined_resources[node.identifier] = node
+        self.defined_resources[resource_name] = node
         
         # Validate attributes
         for attr in node.attributes:

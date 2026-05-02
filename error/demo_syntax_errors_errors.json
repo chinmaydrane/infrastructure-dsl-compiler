@@ -1,0 +1,108 @@
+{
+  "status": "FAILED",
+  "input_file": "input\\demo_syntax_errors.dsl",
+  "error_summary": {
+    "total_errors": 16,
+    "lexical_errors": 0,
+    "syntax_errors": 16,
+    "semantic_errors": 0
+  },
+  "errors": [
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 4, Column 22 (Position 122): [ERROR] Line 5, Column 9 (Position 131): Expected ASSIGN_OP, got INTEGER",
+      "line": 4,
+      "column": 22
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 5, Column 9: Failed to parse attribute: [ERROR] Line 5, Column 9 (Position 131): Expected ASSIGN_OP, got INTEGER",
+      "line": 5,
+      "column": 9
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 5, Column 9 (Position 131): [ERROR] Line 5, Column 30 (Position 152): Expected IDENTIFIER, got COMMENT",
+      "line": 5,
+      "column": 9
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 5, Column 30: Failed to parse attribute: [ERROR] Line 5, Column 30 (Position 152): Expected IDENTIFIER, got COMMENT",
+      "line": 5,
+      "column": 30
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 5, Column 57 (Position 179): [ERROR] Line 6, Column 12 (Position 191): Expected ASSIGN_OP, got STRING",
+      "line": 5,
+      "column": 57
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 6, Column 12: Failed to parse attribute: [ERROR] Line 6, Column 12 (Position 191): Expected ASSIGN_OP, got STRING",
+      "line": 6,
+      "column": 12
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 9, Column 33 (Position 232): [ERROR] Line 10, Column 18 (Position 250): Expected ASSIGN_OP, got STRING",
+      "line": 9,
+      "column": 33
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 16, Column 10 (Position 380): [ERROR] Line 16, Column 30 (Position 400): Expected IDENTIFIER, got COMMENT",
+      "line": 16,
+      "column": 10
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 16, Column 30: Failed to parse attribute: [ERROR] Line 16, Column 30 (Position 400): Expected IDENTIFIER, got COMMENT",
+      "line": 16,
+      "column": 30
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 16, Column 56 (Position 426): [ERROR] Line 17, Column 12 (Position 438): Expected ASSIGN_OP, got STRING",
+      "line": 16,
+      "column": 56
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 17, Column 12: Failed to parse attribute: [ERROR] Line 17, Column 12 (Position 438): Expected ASSIGN_OP, got STRING",
+      "line": 17,
+      "column": 12
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 17, Column 19 (Position 445): [ERROR] Line 18, Column 13 (Position 458): Expected ASSIGN_OP, got STRING",
+      "line": 17,
+      "column": 19
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 18, Column 13: Failed to parse attribute: [ERROR] Line 18, Column 13 (Position 458): Expected ASSIGN_OP, got STRING",
+      "line": 18,
+      "column": 13
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 18, Column 20 (Position 465): [ERROR] Line 19, Column 1 (Position 466): Expected IDENTIFIER, got EOF",
+      "line": 18,
+      "column": 20
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 19, Column 1: Failed to parse attribute: [ERROR] Line 19, Column 1 (Position 466): Expected IDENTIFIER, got EOF",
+      "line": 19,
+      "column": 1
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 19, Column 1 (Position 466): [ERROR] Line -1, Column -1: Expected RBRACE, got EOF",
+      "line": 19,
+      "column": 1
+    }
+  ]
+}

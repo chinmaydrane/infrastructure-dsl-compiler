@@ -8,6 +8,7 @@ It orchestrates the complete compilation pipeline from DSL source to JSON output
 
 import sys
 import argparse
+import json
 from pathlib import Path
 
 from src.lexer import Lexer
@@ -99,9 +100,58 @@ def main():
                     if error.phase == ErrorPhase.SYNTAX:
                         print(f"  {error}")
         
-        # If critical lexical/syntax errors, stop compilation
-        if error_handler.has_critical_errors():
-            print("Compilation stopped due to lexical errors")
+        # If any errors exist, stop compilation
+        if error_handler.has_errors():
+            print("❌ COMPILATION FAILED DUE TO ERRORS")
+            if args.verbose:
+                # Categorize errors by type
+                lexical_errors = [e for e in error_handler.get_errors() if hasattr(e, 'phase') and e.phase.name == 'LEXICAL']
+                syntax_errors = [e for e in error_handler.get_errors() if hasattr(e, 'phase') and e.phase.name == 'SYNTAX']
+                semantic_errors = [e for e in error_handler.get_errors() if hasattr(e, 'phase') and e.phase.name == 'SEMANTIC']
+                
+                total_errors = len(error_handler.get_errors())
+                print(f"\n📊 ERROR SUMMARY:")
+                print(f"   Total Errors: {total_errors}")
+                if lexical_errors:
+                    print(f"   🔤 Lexical Errors: {len(lexical_errors)}")
+                if syntax_errors:
+                    print(f"   📝 Syntax Errors: {len(syntax_errors)}")
+                if semantic_errors:
+                    print(f"   🧠 Semantic Errors: {len(semantic_errors)}")
+                
+                print(f"\n🔍 DETAILED ERRORS:")
+                for error in error_handler.get_errors():
+                    error_type = getattr(error, 'phase', 'UNKNOWN').name if hasattr(error, 'phase') else 'UNKNOWN'
+                    type_emoji = {'LEXICAL': '🔤', 'SYNTAX': '📝', 'SEMANTIC': '🧠', 'UNKNOWN': '❓'}.get(error_type, '❓')
+                    print(f"   {type_emoji} {error}")
+                
+                # Generate error report file
+                error_filename = input_path.stem + '_errors.json'
+                error_path = Path('error') / error_filename
+                error_report = {
+                    "status": "FAILED",
+                    "input_file": str(input_path),
+                    "error_summary": {
+                        "total_errors": total_errors,
+                        "lexical_errors": len(lexical_errors),
+                        "syntax_errors": len(syntax_errors),
+                        "semantic_errors": len(semantic_errors)
+                    },
+                    "errors": [
+                        {
+                            "type": getattr(e, 'phase', 'UNKNOWN').name if hasattr(e, 'phase') else 'UNKNOWN',
+                            "message": str(e),
+                            "line": getattr(e, 'line', -1),
+                            "column": getattr(e, 'column', -1)
+                        }
+                        for e in error_handler.get_errors()
+                    ]
+                }
+                
+                with open(error_path, 'w', encoding='utf-8') as f:
+                    json.dump(error_report, f, indent=2)
+                
+                print(f"\n📄 Error report written to: {error_path}")
             return 1
         
         # If AST-only mode, print AST and exit
@@ -126,23 +176,24 @@ def main():
                     if error.phase == ErrorPhase.SEMANTIC:
                         print(f"  {error}")
         
+        # If any errors exist after semantic analysis, stop compilation
+        if error_handler.has_errors():
+            print("Compilation failed due to semantic errors")
+            if args.verbose:
+                error_count = len(error_handler.get_errors())
+                print(f"Total errors: {error_count}")
+                for error in error_handler.get_errors():
+                    print(f"  {error}")
+            return 1
+        
         # If validate-only mode, exit after semantic analysis
         if args.validate_only:
-            if error_handler.has_errors():
-                print("Validation failed with errors")
-                return 1
-            else:
-                print("Validation passed successfully")
-                return 0
+            print("Validation passed successfully")
+            return 0
         
         # Step 4: Code Generation
         if args.verbose:
             print("\n=== Code Generation ===")
-        
-        # Check for semantic errors before code generation
-        if error_handler.has_semantic_errors():
-            print("Code generation skipped due to semantic errors")
-            return 1
         
         code_generator = CodeGenerator()
         json_output = code_generator.generate(ast)
@@ -154,7 +205,9 @@ def main():
         if args.output:
             output_path = Path(args.output)
         else:
-            output_path = input_path.with_suffix('.json')
+            # Use output/ folder for successful compilations
+            output_filename = input_path.stem + '.json'
+            output_path = Path('output') / output_filename
         
         # Write output
         with open(output_path, 'w', encoding='utf-8') as f:
