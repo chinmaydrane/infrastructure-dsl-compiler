@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "metadata": {
-    "generated_at": "2026-05-04T23:36:51.704251",
+    "generated_at": "2026-05-04T23:36:51.930437",
     "compiler_version": "1.0.0",
     "dsl_version": "1.0.0",
     "resource_count": 1,
@@ -10,9 +10,9 @@
     "role_count": 0
   },
   "resources": {
-    "test": {
+    "web": {
       "type": "server",
-      "name": "test",
+      "name": "web",
       "attributes": {
         "cpu": {
           "type": "literal",

@@ -18,7 +18,8 @@ This project implements a complete compiler pipeline for an Infrastructure Model
 ```
 infrastructure-dsl-compiler/
 ├── README.md                    # This file
-├── requirements.txt             # Python dependencies
+├── requirements.txt             # Python dep
+endencies   
 ├── main.py                      # Main compiler entry point
 ├── docs/
 │   ├── language_specification.md

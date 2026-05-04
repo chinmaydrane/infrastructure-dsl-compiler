@@ -9,6 +9,9 @@ It orchestrates the complete compilation pipeline from DSL source to JSON output
 import sys
 import argparse
 import json
+import time
+import psutil
+import tracemalloc
 from pathlib import Path
 
 from src.lexer import Lexer
@@ -48,6 +51,12 @@ def main():
     )
     
     args = parser.parse_args()
+    
+    # Initialize performance tracking
+    start_time = time.time()
+    tracemalloc.start()
+    process = psutil.Process()
+    start_memory = process.memory_info().rss / 1024 / 1024  # MB
     
     # Initialize error handler
     error_handler = ErrorHandler()
@@ -215,6 +224,21 @@ def main():
         
         if args.verbose:
             print(f"Output written to: {output_path}")
+        
+        # Performance tracking
+        end_time = time.time()
+        current_memory = process.memory_info().rss / 1024 / 1024  # MB
+        peak_memory = tracemalloc.get_traced_memory()[1] / 1024 / 1024  # MB
+        tracemalloc.stop()
+        
+        compilation_time = (end_time - start_time) * 1000  # ms
+        memory_used = peak_memory - start_memory
+        
+        if args.verbose:
+            print(f"\n=== Performance Metrics ===")
+            print(f"Compilation Time: {compilation_time:.2f} ms")
+            print(f"Peak Memory: {peak_memory:.2f} MB")
+            print(f"Memory Used: {memory_used:.2f} MB")
         
         # Report compilation status
         if error_handler.has_errors():
