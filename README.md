@@ -13,14 +13,26 @@ This project implements a complete compiler pipeline for an Infrastructure Model
 - **Control Flow**: conditional statements
 - **Modules**: reusable templates
 
+## Team Contribution
+
+This project is developed by a 4-member team with clearly defined individual contributions:
+
+- **Member 1**: Lexical analysis and error handling system
+- **Member 2**: Parser implementation and AST node definitions  
+- **Member 3**: Semantic analysis and symbol table implementation
+- **Member 4**: Integration coordination and main orchestration
+
+For detailed file-by-file contribution mapping, see `TEAM_CONTRIBUTION_DISTRIBUTION.md` and `COMPLETE_FILE_CONTRIBUTION_MAPPING.md`.
+
 ## Project Structure
 
 ```
 infrastructure-dsl-compiler/
 ├── README.md                    # This file
-├── requirements.txt             # Python dep
-endencies   
+├── requirements.txt             # Python dependencies   
 ├── main.py                      # Main compiler entry point
+├── TEAM_CONTRIBUTION_DISTRIBUTION.md # Team contribution mapping
+├── COMPLETE_FILE_CONTRIBUTION_MAPPING.md # Complete file ownership
 ├── docs/
 │   ├── language_specification.md
 │   ├── grammar.md
@@ -107,6 +119,10 @@ Detailed documentation is available in the `docs/` directory:
 - `error_handling.md` - Error handling mechanisms
 - `project_explanation.md` - Project rationale and objectives
 - `viva_preparation.md` - Viva questions and answers
+
+### Team Contribution Documentation
+- `TEAM_CONTRIBUTION_DISTRIBUTION.md` - Individual team member responsibilities
+- `COMPLETE_FILE_CONTRIBUTION_MAPPING.md` - Complete file-by-file ownership mapping
 
 ## Examples
 
