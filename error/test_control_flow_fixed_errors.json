@@ -1,0 +1,60 @@
+{
+  "status": "FAILED",
+  "input_file": "test_control_flow_fixed.dsl",
+  "error_summary": {
+    "total_errors": 8,
+    "lexical_errors": 0,
+    "syntax_errors": 8,
+    "semantic_errors": 0
+  },
+  "errors": [
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 3, Column 21 (Position 98): [ERROR] Line 4, Column 3 (Position 101): Expected IDENTIFIER, got PARAM",
+      "line": 3,
+      "column": 21
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 4, Column 3: Failed to parse attribute: [ERROR] Line 4, Column 3 (Position 101): Expected IDENTIFIER, got PARAM",
+      "line": 4,
+      "column": 3
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 4, Column 12 (Position 110): [ERROR] Line 5, Column 3 (Position 113): Expected ASSIGN_OP, got RETURN",
+      "line": 4,
+      "column": 12
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 5, Column 3: Failed to parse attribute: [ERROR] Line 5, Column 3 (Position 113): Expected ASSIGN_OP, got RETURN",
+      "line": 5,
+      "column": 3
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 5, Column 3 (Position 113): [ERROR] Line 5, Column 14 (Position 124): Expected ASSIGN_OP, got MULTIPLY",
+      "line": 5,
+      "column": 3
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 5, Column 14: Failed to parse attribute: [ERROR] Line 5, Column 14 (Position 124): Expected ASSIGN_OP, got MULTIPLY",
+      "line": 5,
+      "column": 14
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 5, Column 14 (Position 124): [ERROR] Line 5, Column 16 (Position 126): Expected IDENTIFIER, got INTEGER",
+      "line": 5,
+      "column": 14
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 5, Column 16: Failed to parse attribute: [ERROR] Line 5, Column 16 (Position 126): Expected IDENTIFIER, got INTEGER",
+      "line": 5,
+      "column": 16
+    }
+  ]
+}

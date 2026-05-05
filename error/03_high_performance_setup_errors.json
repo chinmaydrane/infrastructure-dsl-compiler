@@ -1,0 +1,18 @@
+{
+  "status": "FAILED",
+  "input_file": "input\\03_high_performance_setup.dsl",
+  "error_summary": {
+    "total_errors": 1,
+    "lexical_errors": 0,
+    "syntax_errors": 1,
+    "semantic_errors": 0
+  },
+  "errors": [
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 40, Column 1 (Position 676): [ERROR] Line 41, Column 7 (Position 683): Expected IDENTIFIER, got STRING",
+      "line": 40,
+      "column": 1
+    }
+  ]
+}

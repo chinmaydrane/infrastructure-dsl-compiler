@@ -1,0 +1,54 @@
+{
+  "status": "FAILED",
+  "input_file": "simple_member_test.dsl",
+  "error_summary": {
+    "total_errors": 7,
+    "lexical_errors": 0,
+    "syntax_errors": 7,
+    "semantic_errors": 0
+  },
+  "errors": [
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 22, Column 19 (Position 390): [ERROR] Line 23, Column 28 (Position 418): Expected IDENTIFIER, got DOT",
+      "line": 22,
+      "column": 19
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 23, Column 28: Failed to parse attribute: [ERROR] Line 23, Column 28 (Position 418): Expected IDENTIFIER, got DOT",
+      "line": 23,
+      "column": 28
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 23, Column 43 (Position 433): [ERROR] Line 24, Column 1 (Position 434): Expected ASSIGN_OP, got RBRACE",
+      "line": 23,
+      "column": 43
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 24, Column 1: Failed to parse attribute: [ERROR] Line 24, Column 1 (Position 434): Expected ASSIGN_OP, got RBRACE",
+      "line": 24,
+      "column": 1
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 24, Column 2 (Position 435): [ERROR] Line 25, Column 1 (Position 436): Expected IDENTIFIER, got EOF",
+      "line": 24,
+      "column": 2
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 25, Column 1: Failed to parse attribute: [ERROR] Line 25, Column 1 (Position 436): Expected IDENTIFIER, got EOF",
+      "line": 25,
+      "column": 1
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 25, Column 1 (Position 436): [ERROR] Line -1, Column -1: Expected RBRACE, got EOF",
+      "line": 25,
+      "column": 1
+    }
+  ]
+}

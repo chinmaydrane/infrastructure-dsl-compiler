@@ -1,0 +1,387 @@
+{
+  "version": "1.0",
+  "metadata": {
+    "generated_at": "2026-05-05T08:57:44.240313",
+    "compiler_version": "1.0.0",
+    "dsl_version": "1.0.0",
+    "resource_count": 7,
+    "connection_count": 0,
+    "policy_count": 0,
+    "role_count": 0
+  },
+  "resources": {
+    "primary_db": {
+      "type": "database",
+      "name": "primary_db",
+      "attributes": {
+        "engine": {
+          "type": "literal",
+          "value": "mysql",
+          "literal_type": "string",
+          "metadata": {
+            "line": 5,
+            "column": 14
+          }
+        },
+        "version": {
+          "type": "literal",
+          "value": "8.0",
+          "literal_type": "string",
+          "metadata": {
+            "line": 6,
+            "column": 15
+          }
+        },
+        "storage": {
+          "type": "literal",
+          "value": "1000GB",
+          "literal_type": "string",
+          "metadata": {
+            "line": 7,
+            "column": 15
+          }
+        },
+        "instance_class": {
+          "type": "literal",
+          "value": "db.r5.large",
+          "literal_type": "string",
+          "metadata": {
+            "line": 8,
+            "column": 22
+          }
+        },
+        "backup_retention": {
+          "type": "literal",
+          "value": 30,
+          "literal_type": "integer",
+          "metadata": {
+            "line": 9,
+            "column": 24
+          }
+        }
+      },
+      "metadata": {
+        "line": 4,
+        "column": 1
+      }
+    },
+    "read_replica_1": {
+      "type": "database",
+      "name": "read_replica_1",
+      "attributes": {
+        "engine": {
+          "type": "literal",
+          "value": "mysql",
+          "literal_type": "string",
+          "metadata": {
+            "line": 13,
+            "column": 14
+          }
+        },
+        "version": {
+          "type": "literal",
+          "value": "8.0",
+          "literal_type": "string",
+          "metadata": {
+            "line": 14,
+            "column": 15
+          }
+        },
+        "storage": {
+          "type": "literal",
+          "value": "1000GB",
+          "literal_type": "string",
+          "metadata": {
+            "line": 15,
+            "column": 15
+          }
+        },
+        "instance_class": {
+          "type": "literal",
+          "value": "db.r5.large",
+          "literal_type": "string",
+          "metadata": {
+            "line": 16,
+            "column": 22
+          }
+        },
+        "backup_retention": {
+          "type": "literal",
+          "value": 7,
+          "literal_type": "integer",
+          "metadata": {
+            "line": 17,
+            "column": 24
+          }
+        }
+      },
+      "metadata": {
+        "line": 12,
+        "column": 1
+      }
+    },
+    "read_replica_2": {
+      "type": "database",
+      "name": "read_replica_2",
+      "attributes": {
+        "engine": {
+          "type": "literal",
+          "value": "mysql",
+          "literal_type": "string",
+          "metadata": {
+            "line": 21,
+            "column": 14
+          }
+        },
+        "version": {
+          "type": "literal",
+          "value": "8.0",
+          "literal_type": "string",
+          "metadata": {
+            "line": 22,
+            "column": 15
+          }
+        },
+        "storage": {
+          "type": "literal",
+          "value": "1000GB",
+          "literal_type": "string",
+          "metadata": {
+            "line": 23,
+            "column": 15
+          }
+        },
+        "instance_class": {
+          "type": "literal",
+          "value": "db.r5.large",
+          "literal_type": "string",
+          "metadata": {
+            "line": 24,
+            "column": 22
+          }
+        },
+        "backup_retention": {
+          "type": "literal",
+          "value": 7,
+          "literal_type": "integer",
+          "metadata": {
+            "line": 25,
+            "column": 24
+          }
+        }
+      },
+      "metadata": {
+        "line": 20,
+        "column": 1
+      }
+    },
+    "read_replica_3": {
+      "type": "database",
+      "name": "read_replica_3",
+      "attributes": {
+        "engine": {
+          "type": "literal",
+          "value": "mysql",
+          "literal_type": "string",
+          "metadata": {
+            "line": 29,
+            "column": 14
+          }
+        },
+        "version": {
+          "type": "literal",
+          "value": "8.0",
+          "literal_type": "string",
+          "metadata": {
+            "line": 30,
+            "column": 15
+          }
+        },
+        "storage": {
+          "type": "literal",
+          "value": "1000GB",
+          "literal_type": "string",
+          "metadata": {
+            "line": 31,
+            "column": 15
+          }
+        },
+        "instance_class": {
+          "type": "literal",
+          "value": "db.r5.large",
+          "literal_type": "string",
+          "metadata": {
+            "line": 32,
+            "column": 22
+          }
+        },
+        "backup_retention": {
+          "type": "literal",
+          "value": 7,
+          "literal_type": "integer",
+          "metadata": {
+            "line": 33,
+            "column": 24
+          }
+        }
+      },
+      "metadata": {
+        "line": 28,
+        "column": 1
+      }
+    },
+    "redis_primary": {
+      "type": "database",
+      "name": "redis_primary",
+      "attributes": {
+        "engine": {
+          "type": "literal",
+          "value": "redis",
+          "literal_type": "string",
+          "metadata": {
+            "line": 37,
+            "column": 14
+          }
+        },
+        "version": {
+          "type": "literal",
+          "value": "6.0",
+          "literal_type": "string",
+          "metadata": {
+            "line": 38,
+            "column": 15
+          }
+        },
+        "storage": {
+          "type": "literal",
+          "value": "100GB",
+          "literal_type": "string",
+          "metadata": {
+            "line": 39,
+            "column": 15
+          }
+        },
+        "instance_class": {
+          "type": "literal",
+          "value": "cache.r5.large",
+          "literal_type": "string",
+          "metadata": {
+            "line": 40,
+            "column": 22
+          }
+        },
+        "backup_retention": {
+          "type": "literal",
+          "value": 14,
+          "literal_type": "integer",
+          "metadata": {
+            "line": 41,
+            "column": 24
+          }
+        }
+      },
+      "metadata": {
+        "line": 36,
+        "column": 1
+      }
+    },
+    "redis_replica": {
+      "type": "database",
+      "name": "redis_replica",
+      "attributes": {
+        "engine": {
+          "type": "literal",
+          "value": "redis",
+          "literal_type": "string",
+          "metadata": {
+            "line": 45,
+            "column": 14
+          }
+        },
+        "version": {
+          "type": "literal",
+          "value": "6.0",
+          "literal_type": "string",
+          "metadata": {
+            "line": 46,
+            "column": 15
+          }
+        },
+        "storage": {
+          "type": "literal",
+          "value": "100GB",
+          "literal_type": "string",
+          "metadata": {
+            "line": 47,
+            "column": 15
+          }
+        },
+        "instance_class": {
+          "type": "literal",
+          "value": "cache.r5.large",
+          "literal_type": "string",
+          "metadata": {
+            "line": 48,
+            "column": 22
+          }
+        },
+        "backup_retention": {
+          "type": "literal",
+          "value": 7,
+          "literal_type": "integer",
+          "metadata": {
+            "line": 49,
+            "column": 24
+          }
+        }
+      },
+      "metadata": {
+        "line": 44,
+        "column": 1
+      }
+    },
+    "vpc_database_cluster": {
+      "type": "network",
+      "name": "vpc_database_cluster",
+      "attributes": {
+        "cidr_block": {
+          "type": "literal",
+          "value": "10.0.0.0/16",
+          "literal_type": "string",
+          "metadata": {
+            "line": 53,
+            "column": 18
+          }
+        },
+        "enable_dns_hostnames": {
+          "type": "literal",
+          "value": true,
+          "literal_type": "boolean",
+          "metadata": {
+            "line": 54,
+            "column": 28
+          }
+        },
+        "enable_dns_support": {
+          "type": "literal",
+          "value": true,
+          "literal_type": "boolean",
+          "metadata": {
+            "line": 55,
+            "column": 26
+          }
+        }
+      },
+      "metadata": {
+        "line": 52,
+        "column": 1
+      }
+    }
+  },
+  "connections": [],
+  "policies": {},
+  "roles": {},
+  "modules": {},
+  "variables": {},
+  "constants": {}
+}

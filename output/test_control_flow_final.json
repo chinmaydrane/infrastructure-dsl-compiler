@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "metadata": {
-    "generated_at": "2026-05-05T08:29:35.004570",
+    "generated_at": "2026-05-05T08:12:41.976675",
     "compiler_version": "1.0.0",
     "dsl_version": "1.0.0",
     "resource_count": 3,
@@ -16,7 +16,7 @@
       "attributes": {
         "cpu": {
           "type": "literal",
-          "value": 2,
+          "value": 4,
           "literal_type": "integer",
           "metadata": {
             "line": 5,

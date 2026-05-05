@@ -1,0 +1,360 @@
+{
+  "version": "1.0",
+  "metadata": {
+    "generated_at": "2026-05-05T08:38:32.182068",
+    "compiler_version": "1.0.0",
+    "dsl_version": "1.0.0",
+    "resource_count": 7,
+    "connection_count": 0,
+    "policy_count": 0,
+    "role_count": 0
+  },
+  "resources": {
+    "web_server_1": {
+      "type": "server",
+      "name": "web_server_1",
+      "attributes": {
+        "cpu": {
+          "type": "literal",
+          "value": 8,
+          "literal_type": "integer",
+          "metadata": {
+            "line": 5,
+            "column": 11
+          }
+        },
+        "memory": {
+          "type": "literal",
+          "value": "16GB",
+          "literal_type": "string",
+          "metadata": {
+            "line": 6,
+            "column": 14
+          }
+        },
+        "os": {
+          "type": "literal",
+          "value": "ubuntu-22.04",
+          "literal_type": "string",
+          "metadata": {
+            "line": 7,
+            "column": 10
+          }
+        },
+        "enabled": {
+          "type": "literal",
+          "value": true,
+          "literal_type": "boolean",
+          "metadata": {
+            "line": 8,
+            "column": 15
+          }
+        }
+      },
+      "metadata": {
+        "line": 4,
+        "column": 1
+      }
+    },
+    "web_server_2": {
+      "type": "server",
+      "name": "web_server_2",
+      "attributes": {
+        "cpu": {
+          "type": "literal",
+          "value": 8,
+          "literal_type": "integer",
+          "metadata": {
+            "line": 12,
+            "column": 11
+          }
+        },
+        "memory": {
+          "type": "literal",
+          "value": "16GB",
+          "literal_type": "string",
+          "metadata": {
+            "line": 13,
+            "column": 14
+          }
+        },
+        "os": {
+          "type": "literal",
+          "value": "ubuntu-22.04",
+          "literal_type": "string",
+          "metadata": {
+            "line": 14,
+            "column": 10
+          }
+        },
+        "enabled": {
+          "type": "literal",
+          "value": true,
+          "literal_type": "boolean",
+          "metadata": {
+            "line": 15,
+            "column": 15
+          }
+        }
+      },
+      "metadata": {
+        "line": 11,
+        "column": 1
+      }
+    },
+    "app_server_1": {
+      "type": "server",
+      "name": "app_server_1",
+      "attributes": {
+        "cpu": {
+          "type": "literal",
+          "value": 16,
+          "literal_type": "integer",
+          "metadata": {
+            "line": 19,
+            "column": 11
+          }
+        },
+        "memory": {
+          "type": "literal",
+          "value": "32GB",
+          "literal_type": "string",
+          "metadata": {
+            "line": 20,
+            "column": 14
+          }
+        },
+        "os": {
+          "type": "literal",
+          "value": "ubuntu-22.04",
+          "literal_type": "string",
+          "metadata": {
+            "line": 21,
+            "column": 10
+          }
+        },
+        "enabled": {
+          "type": "literal",
+          "value": true,
+          "literal_type": "boolean",
+          "metadata": {
+            "line": 22,
+            "column": 15
+          }
+        }
+      },
+      "metadata": {
+        "line": 18,
+        "column": 1
+      }
+    },
+    "primary_db": {
+      "type": "database",
+      "name": "primary_db",
+      "attributes": {
+        "engine": {
+          "type": "literal",
+          "value": "mysql",
+          "literal_type": "string",
+          "metadata": {
+            "line": 26,
+            "column": 14
+          }
+        },
+        "version": {
+          "type": "literal",
+          "value": "8.0",
+          "literal_type": "string",
+          "metadata": {
+            "line": 27,
+            "column": 15
+          }
+        },
+        "storage": {
+          "type": "literal",
+          "value": "500GB",
+          "literal_type": "string",
+          "metadata": {
+            "line": 28,
+            "column": 15
+          }
+        },
+        "instance_class": {
+          "type": "literal",
+          "value": "db.r5.large",
+          "literal_type": "string",
+          "metadata": {
+            "line": 29,
+            "column": 22
+          }
+        },
+        "backup_retention": {
+          "type": "literal",
+          "value": 30,
+          "literal_type": "integer",
+          "metadata": {
+            "line": 30,
+            "column": 24
+          }
+        }
+      },
+      "metadata": {
+        "line": 25,
+        "column": 1
+      }
+    },
+    "read_replica": {
+      "type": "database",
+      "name": "read_replica",
+      "attributes": {
+        "engine": {
+          "type": "literal",
+          "value": "mysql",
+          "literal_type": "string",
+          "metadata": {
+            "line": 34,
+            "column": 14
+          }
+        },
+        "version": {
+          "type": "literal",
+          "value": "8.0",
+          "literal_type": "string",
+          "metadata": {
+            "line": 35,
+            "column": 15
+          }
+        },
+        "storage": {
+          "type": "literal",
+          "value": "500GB",
+          "literal_type": "string",
+          "metadata": {
+            "line": 36,
+            "column": 15
+          }
+        },
+        "instance_class": {
+          "type": "literal",
+          "value": "db.r5.large",
+          "literal_type": "string",
+          "metadata": {
+            "line": 37,
+            "column": 22
+          }
+        },
+        "backup_retention": {
+          "type": "literal",
+          "value": 7,
+          "literal_type": "integer",
+          "metadata": {
+            "line": 38,
+            "column": 24
+          }
+        }
+      },
+      "metadata": {
+        "line": 33,
+        "column": 1
+      }
+    },
+    "redis_cluster": {
+      "type": "database",
+      "name": "redis_cluster",
+      "attributes": {
+        "engine": {
+          "type": "literal",
+          "value": "redis",
+          "literal_type": "string",
+          "metadata": {
+            "line": 42,
+            "column": 14
+          }
+        },
+        "version": {
+          "type": "literal",
+          "value": "6.0",
+          "literal_type": "string",
+          "metadata": {
+            "line": 43,
+            "column": 15
+          }
+        },
+        "storage": {
+          "type": "literal",
+          "value": "100GB",
+          "literal_type": "string",
+          "metadata": {
+            "line": 44,
+            "column": 15
+          }
+        },
+        "instance_class": {
+          "type": "literal",
+          "value": "cache.r5.large",
+          "literal_type": "string",
+          "metadata": {
+            "line": 45,
+            "column": 22
+          }
+        },
+        "backup_retention": {
+          "type": "literal",
+          "value": 7,
+          "literal_type": "integer",
+          "metadata": {
+            "line": 46,
+            "column": 24
+          }
+        }
+      },
+      "metadata": {
+        "line": 41,
+        "column": 1
+      }
+    },
+    "vpc_production": {
+      "type": "network",
+      "name": "vpc_production",
+      "attributes": {
+        "cidr_block": {
+          "type": "literal",
+          "value": "10.0.0.0/16",
+          "literal_type": "string",
+          "metadata": {
+            "line": 50,
+            "column": 18
+          }
+        },
+        "enable_dns_hostnames": {
+          "type": "literal",
+          "value": true,
+          "literal_type": "boolean",
+          "metadata": {
+            "line": 51,
+            "column": 28
+          }
+        },
+        "enable_dns_support": {
+          "type": "literal",
+          "value": true,
+          "literal_type": "boolean",
+          "metadata": {
+            "line": 52,
+            "column": 26
+          }
+        }
+      },
+      "metadata": {
+        "line": 49,
+        "column": 1
+      }
+    }
+  },
+  "connections": [],
+  "policies": {},
+  "roles": {},
+  "modules": {},
+  "variables": {},
+  "constants": {}
+}

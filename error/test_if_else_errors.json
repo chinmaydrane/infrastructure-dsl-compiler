@@ -1,0 +1,84 @@
+{
+  "status": "FAILED",
+  "input_file": "test_if_else.dsl",
+  "error_summary": {
+    "total_errors": 12,
+    "lexical_errors": 0,
+    "syntax_errors": 12,
+    "semantic_errors": 0
+  },
+  "errors": [
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 4, Column 25 (Position 124): [ERROR] Line 5, Column 1 (Position 125): Expected IDENTIFIER, got IF",
+      "line": 4,
+      "column": 25
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 5, Column 1: Failed to parse attribute: [ERROR] Line 5, Column 1 (Position 125): Expected IDENTIFIER, got IF",
+      "line": 5,
+      "column": 1
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 5, Column 1 (Position 125): [ERROR] Line 5, Column 3 (Position 127): Expected IDENTIFIER, got LPAREN",
+      "line": 5,
+      "column": 1
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 5, Column 3: Failed to parse attribute: [ERROR] Line 5, Column 3 (Position 127): Expected IDENTIFIER, got LPAREN",
+      "line": 5,
+      "column": 3
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 5, Column 3 (Position 127): [ERROR] Line 5, Column 15 (Position 139): Expected ASSIGN_OP, got EQUALS",
+      "line": 5,
+      "column": 3
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 5, Column 15: Failed to parse attribute: [ERROR] Line 5, Column 15 (Position 139): Expected ASSIGN_OP, got EQUALS",
+      "line": 5,
+      "column": 15
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 5, Column 15 (Position 139): [ERROR] Line 5, Column 17 (Position 141): Expected IDENTIFIER, got STRING",
+      "line": 5,
+      "column": 15
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 5, Column 17: Failed to parse attribute: [ERROR] Line 5, Column 17 (Position 141): Expected IDENTIFIER, got STRING",
+      "line": 5,
+      "column": 17
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 5, Column 17 (Position 141): [ERROR] Line 5, Column 29 (Position 153): Expected IDENTIFIER, got RPAREN",
+      "line": 5,
+      "column": 17
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 5, Column 29: Failed to parse attribute: [ERROR] Line 5, Column 29 (Position 153): Expected IDENTIFIER, got RPAREN",
+      "line": 5,
+      "column": 29
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 5, Column 30 (Position 154): [ERROR] Line 6, Column 1 (Position 155): Expected IDENTIFIER, got LBRACE",
+      "line": 5,
+      "column": 30
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 6, Column 1: Failed to parse attribute: [ERROR] Line 6, Column 1 (Position 155): Expected IDENTIFIER, got LBRACE",
+      "line": 6,
+      "column": 1
+    }
+  ]
+}

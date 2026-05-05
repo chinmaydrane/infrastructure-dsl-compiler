@@ -20,19 +20,12 @@ This document presents the formal context-free grammar (CFG) for the Infrastruct
 <program> ::= {<compilation_unit>} <EOF>
 
 <compilation_unit> ::= <statement>
-                    | <function_declaration>
-                    | <module_declaration>
                     | <variable_declaration>
                     | <constant_declaration>
                     | <role_declaration>
                     | <policy_declaration>
-                    | <assignment>
-                    | <use_statement>
-                    | <connect_statement>
                     | <attach_statement>
                     | <assign_statement>
-                    | <if_statement>
-                    | <for_statement>
                     | <comment>
 ```
 
@@ -103,41 +96,7 @@ This document presents the formal context-free grammar (CFG) for the Infrastruct
 <conditional_clause> ::= <expression>
 ```
 
-### 6. Function Declarations
 
-```
-<function_declaration> ::= "function" <identifier> "(" [<parameter_list>] ")" <function_body>
-
-<parameter_list> ::= <parameter> {"," <parameter>}
-
-<parameter> ::= <identifier>
-
-<function_body> ::= "{" {<statement_list>} "return" <expression> ";" "}"
-
-<function_call> ::= <identifier> "(" [<argument_list>] ")"
-
-<argument_list> ::= <expression> {"," <expression>}
-```
-
-### 7. Module Declarations
-
-```
-<module_declaration> ::= "module" <identifier> <module_body>
-
-<module_body> ::= "{" [<module_parameter_list>] [<module_statement_list>] "}"
-
-<module_parameter_list> ::= <module_parameter> {"," <module_parameter>}
-
-<module_parameter> ::= "param" <identifier> "=" <expression>
-
-<module_statement_list> ::= <module_statement>+
-
-<module_statement> ::= <statement>
-                      | <for_statement>
-                      | <if_statement>
-                      | <assignment>
-                      | <comment>
-```
 
 ### 8. Variable and Constant Declarations
 
@@ -196,16 +155,7 @@ This document presents the formal context-free grammar (CFG) for the Infrastruct
                      | "log_streams" "=" <array_literal>
 ```
 
-### 11. Control Flow Statements
 
-```
-<if_statement> ::= "if" <expression> <block> ["else" <block>]
-
-<for_statement> ::= "for" <identifier> "in" <expression> <block>
-
-<block> ::= "{" [<statement_list>] "}"
-
-<statement_list> ::= <statement>+
 ```
 
 ### 12. Assignment Statements
@@ -214,10 +164,7 @@ This document presents the formal context-free grammar (CFG) for the Infrastruct
 <assignment> ::= <identifier> "=" <expression>
 ```
 
-### 13. Use Statement
 
-```
-<use_statement> ::= "use" <identifier> "with" <object_literal>
 ```
 
 ### 14. Connect Statement
@@ -266,19 +213,7 @@ This document presents the formal context-free grammar (CFG) for the Infrastruct
 <null_literal> ::= "null"
 ```
 
-### 18. Complex Literals
 
-```
-<object_literal> ::= "{" [<object_property_list>] "}"
-
-<object_property_list> ::= <object_property> {"," <object_property>}
-
-<object_property> ::= <identifier> ":" <expression>
-                      | <string_literal> ":" <expression>
-
-<array_literal> ::= "[" [<expression_list>] "]"
-
-<expression_list> ::= <expression> {"," <expression>}
 ```
 
 ### 19. Member Access
@@ -406,10 +341,7 @@ server "web_server" {
 <size_literal> → "8GB"
 ```
 
-### Example 2: Conditional Expression
 
-```
-if environment == "production" then 8 else 4
 ```
 
 **Derivation**:

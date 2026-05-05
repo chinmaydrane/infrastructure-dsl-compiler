@@ -1,0 +1,180 @@
+{
+  "status": "FAILED",
+  "input_file": "basic_function_use_case.dsl",
+  "error_summary": {
+    "total_errors": 28,
+    "lexical_errors": 0,
+    "syntax_errors": 28,
+    "semantic_errors": 0
+  },
+  "errors": [
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 8, Column 44 (Position 362): [ERROR] Line 9, Column 26 (Position 388): Expected LBRACE, got LPAREN",
+      "line": 8,
+      "column": 44
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 13, Column 57 (Position 503): [ERROR] Line 14, Column 27 (Position 530): Expected LBRACE, got LPAREN",
+      "line": 13,
+      "column": 57
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 26, Column 62 (Position 857): [ERROR] Line 27, Column 30 (Position 887): Expected LBRACE, got LPAREN",
+      "line": 26,
+      "column": 62
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 30, Column 7 (Position 966): [ERROR] Line 30, Column 12 (Position 971): Expected LBRACE, got IF",
+      "line": 30,
+      "column": 7
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 44, Column 36 (Position 1373): [ERROR] Line 44, Column 42 (Position 1379): Expected IDENTIFIER, got COMMENT",
+      "line": 44,
+      "column": 36
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 44, Column 42: Failed to parse attribute: [ERROR] Line 44, Column 42 (Position 1379): Expected IDENTIFIER, got COMMENT",
+      "line": 44,
+      "column": 42
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 51, Column 36 (Position 1511): [ERROR] Line 51, Column 42 (Position 1517): Expected IDENTIFIER, got COMMENT",
+      "line": 51,
+      "column": 36
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 51, Column 42: Failed to parse attribute: [ERROR] Line 51, Column 42 (Position 1517): Expected IDENTIFIER, got COMMENT",
+      "line": 51,
+      "column": 42
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 58, Column 36 (Position 1649): [ERROR] Line 58, Column 42 (Position 1655): Expected IDENTIFIER, got COMMENT",
+      "line": 58,
+      "column": 36
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 58, Column 42: Failed to parse attribute: [ERROR] Line 58, Column 42 (Position 1655): Expected IDENTIFIER, got COMMENT",
+      "line": 58,
+      "column": 42
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 68, Column 36 (Position 1879): [ERROR] Line 68, Column 42 (Position 1885): Expected IDENTIFIER, got COMMENT",
+      "line": 68,
+      "column": 36
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 68, Column 42: Failed to parse attribute: [ERROR] Line 68, Column 42 (Position 1885): Expected IDENTIFIER, got COMMENT",
+      "line": 68,
+      "column": 42
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 69, Column 43 (Position 1933): [ERROR] Line 69, Column 47 (Position 1937): Expected IDENTIFIER, got COMMENT",
+      "line": 69,
+      "column": 43
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 69, Column 47: Failed to parse attribute: [ERROR] Line 69, Column 47 (Position 1937): Expected IDENTIFIER, got COMMENT",
+      "line": 69,
+      "column": 47
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 70, Column 45 (Position 2003): [ERROR] Line 70, Column 60 (Position 2018): Expected IDENTIFIER, got COMMENT",
+      "line": 70,
+      "column": 45
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 70, Column 60: Failed to parse attribute: [ERROR] Line 70, Column 60 (Position 2018): Expected IDENTIFIER, got COMMENT",
+      "line": 70,
+      "column": 60
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 76, Column 36 (Position 2151): [ERROR] Line 76, Column 42 (Position 2157): Expected IDENTIFIER, got COMMENT",
+      "line": 76,
+      "column": 36
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 76, Column 42: Failed to parse attribute: [ERROR] Line 76, Column 42 (Position 2157): Expected IDENTIFIER, got COMMENT",
+      "line": 76,
+      "column": 42
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 87, Column 14 (Position 2472): [ERROR] Line 87, Column 21 (Position 2479): Expected IDENTIFIER, got COMMENT",
+      "line": 87,
+      "column": 14
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 87, Column 21: Failed to parse attribute: [ERROR] Line 87, Column 21 (Position 2479): Expected IDENTIFIER, got COMMENT",
+      "line": 87,
+      "column": 21
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 94, Column 14 (Position 2616): [ERROR] Line 94, Column 21 (Position 2623): Expected IDENTIFIER, got COMMENT",
+      "line": 94,
+      "column": 14
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 94, Column 21: Failed to parse attribute: [ERROR] Line 94, Column 21 (Position 2623): Expected IDENTIFIER, got COMMENT",
+      "line": 94,
+      "column": 21
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 101, Column 14 (Position 2760): [ERROR] Line 101, Column 22 (Position 2768): Expected IDENTIFIER, got COMMENT",
+      "line": 101,
+      "column": 14
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 101, Column 22: Failed to parse attribute: [ERROR] Line 101, Column 22 (Position 2768): Expected IDENTIFIER, got COMMENT",
+      "line": 101,
+      "column": 22
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 110, Column 22 (Position 2965): [ERROR] Line 110, Column 34 (Position 2977): Expected IDENTIFIER, got COMMENT",
+      "line": 110,
+      "column": 22
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 110, Column 34: Failed to parse attribute: [ERROR] Line 110, Column 34 (Position 2977): Expected IDENTIFIER, got COMMENT",
+      "line": 110,
+      "column": 34
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 111, Column 24 (Position 3020): [ERROR] Line 111, Column 28 (Position 3024): Expected IDENTIFIER, got COMMENT",
+      "line": 111,
+      "column": 24
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 111, Column 28: Failed to parse attribute: [ERROR] Line 111, Column 28 (Position 3024): Expected IDENTIFIER, got COMMENT",
+      "line": 111,
+      "column": 28
+    }
+  ]
+}

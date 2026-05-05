@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "metadata": {
-    "generated_at": "2026-05-05T08:29:35.004570",
+    "generated_at": "2026-05-05T08:18:52.625291",
     "compiler_version": "1.0.0",
     "dsl_version": "1.0.0",
     "resource_count": 3,
@@ -10,16 +10,16 @@
     "role_count": 0
   },
   "resources": {
-    "web_server": {
+    "working_server": {
       "type": "server",
-      "name": "web_server",
+      "name": "working_server",
       "attributes": {
         "cpu": {
           "type": "literal",
           "value": 2,
           "literal_type": "integer",
           "metadata": {
-            "line": 5,
+            "line": 4,
             "column": 11
           }
         },
@@ -28,7 +28,7 @@
           "value": "4GB",
           "literal_type": "string",
           "metadata": {
-            "line": 6,
+            "line": 5,
             "column": 14
           }
         },
@@ -37,7 +37,7 @@
           "value": "ubuntu-20.04",
           "literal_type": "string",
           "metadata": {
-            "line": 7,
+            "line": 6,
             "column": 10
           }
         },
@@ -46,26 +46,26 @@
           "value": true,
           "literal_type": "boolean",
           "metadata": {
-            "line": 8,
+            "line": 7,
             "column": 15
           }
         }
       },
       "metadata": {
-        "line": 4,
+        "line": 3,
         "column": 1
       }
     },
-    "primary_db": {
+    "working_db": {
       "type": "database",
-      "name": "primary_db",
+      "name": "working_db",
       "attributes": {
         "engine": {
           "type": "literal",
           "value": "mysql",
           "literal_type": "string",
           "metadata": {
-            "line": 12,
+            "line": 11,
             "column": 14
           }
         },
@@ -74,7 +74,7 @@
           "value": "8.0",
           "literal_type": "string",
           "metadata": {
-            "line": 13,
+            "line": 12,
             "column": 15
           }
         },
@@ -83,16 +83,16 @@
           "value": "100GB",
           "literal_type": "string",
           "metadata": {
-            "line": 14,
+            "line": 13,
             "column": 15
           }
         },
         "instance_class": {
           "type": "literal",
-          "value": "db.t3.medium",
+          "value": "t3.medium",
           "literal_type": "string",
           "metadata": {
-            "line": 15,
+            "line": 14,
             "column": 22
           }
         },
@@ -101,26 +101,26 @@
           "value": 7,
           "literal_type": "integer",
           "metadata": {
-            "line": 16,
+            "line": 15,
             "column": 24
           }
         }
       },
       "metadata": {
-        "line": 11,
+        "line": 10,
         "column": 1
       }
     },
-    "vpc_main": {
+    "working_network": {
       "type": "network",
-      "name": "vpc_main",
+      "name": "working_network",
       "attributes": {
         "cidr_block": {
           "type": "literal",
           "value": "10.0.0.0/16",
           "literal_type": "string",
           "metadata": {
-            "line": 20,
+            "line": 19,
             "column": 18
           }
         },
@@ -129,7 +129,7 @@
           "value": true,
           "literal_type": "boolean",
           "metadata": {
-            "line": 21,
+            "line": 20,
             "column": 28
           }
         },
@@ -138,13 +138,13 @@
           "value": true,
           "literal_type": "boolean",
           "metadata": {
-            "line": 22,
+            "line": 21,
             "column": 26
           }
         }
       },
       "metadata": {
-        "line": 19,
+        "line": 18,
         "column": 1
       }
     }

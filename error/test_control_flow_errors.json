@@ -1,0 +1,18 @@
+{
+  "status": "FAILED",
+  "input_file": "test_control_flow.dsl",
+  "error_summary": {
+    "total_errors": 1,
+    "lexical_errors": 0,
+    "syntax_errors": 1,
+    "semantic_errors": 0
+  },
+  "errors": [
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 2, Column 40 (Position 77): [ERROR] Line 3, Column 19 (Position 96): Expected LBRACE, got LPAREN",
+      "line": 2,
+      "column": 40
+    }
+  ]
+}

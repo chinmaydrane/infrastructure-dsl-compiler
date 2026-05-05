@@ -1,0 +1,42 @@
+{
+  "status": "FAILED",
+  "input_file": "function_test_status.dsl",
+  "error_summary": {
+    "total_errors": 5,
+    "lexical_errors": 0,
+    "syntax_errors": 5,
+    "semantic_errors": 0
+  },
+  "errors": [
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 3, Column 28 (Position 81): [ERROR] Line 4, Column 26 (Position 107): Expected LBRACE, got LPAREN",
+      "line": 3,
+      "column": 28
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 10, Column 36 (Position 209): [ERROR] Line 10, Column 42 (Position 215): Expected IDENTIFIER, got COMMENT",
+      "line": 10,
+      "column": 36
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 10, Column 42: Failed to parse attribute: [ERROR] Line 10, Column 42 (Position 215): Expected IDENTIFIER, got COMMENT",
+      "line": 10,
+      "column": 42
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 16, Column 14 (Position 325): [ERROR] Line 16, Column 21 (Position 332): Expected IDENTIFIER, got COMMENT",
+      "line": 16,
+      "column": 14
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 16, Column 21: Failed to parse attribute: [ERROR] Line 16, Column 21 (Position 332): Expected IDENTIFIER, got COMMENT",
+      "line": 16,
+      "column": 21
+    }
+  ]
+}

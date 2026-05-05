@@ -1,0 +1,60 @@
+{
+  "status": "FAILED",
+  "input_file": "correct_policy_connect.dsl",
+  "error_summary": {
+    "total_errors": 8,
+    "lexical_errors": 0,
+    "syntax_errors": 8,
+    "semantic_errors": 0
+  },
+  "errors": [
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 29, Column 1 (Position 639): [ERROR] Line 30, Column 7 (Position 646): Expected IDENTIFIER, got STRING",
+      "line": 29,
+      "column": 1
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 69, Column 34 (Position 1606): [ERROR] Line 70, Column 8 (Position 1614): Expected IDENTIFIER, got STRING",
+      "line": 69,
+      "column": 34
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 80, Column 27 (Position 1842): [ERROR] Line 81, Column 8 (Position 1850): Expected IDENTIFIER, got STRING",
+      "line": 80,
+      "column": 27
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 92, Column 32 (Position 2111): [ERROR] Line 93, Column 8 (Position 2119): Expected IDENTIFIER, got STRING",
+      "line": 92,
+      "column": 32
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 107, Column 1 (Position 2505): [ERROR] Line 108, Column 6 (Position 2511): Expected IDENTIFIER, got STRING",
+      "line": 107,
+      "column": 1
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 115, Column 1 (Position 2647): [ERROR] Line 116, Column 6 (Position 2653): Expected IDENTIFIER, got STRING",
+      "line": 115,
+      "column": 1
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 128, Column 1 (Position 2985): [ERROR] Line 129, Column 8 (Position 2993): Expected IDENTIFIER, got STRING",
+      "line": 128,
+      "column": 1
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 129, Column 35 (Position 3020): [ERROR] Line 130, Column 8 (Position 3028): Expected IDENTIFIER, got STRING",
+      "line": 129,
+      "column": 35
+    }
+  ]
+}

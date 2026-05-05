@@ -1,0 +1,84 @@
+{
+  "status": "FAILED",
+  "input_file": "working_policy_connect.dsl",
+  "error_summary": {
+    "total_errors": 12,
+    "lexical_errors": 0,
+    "syntax_errors": 12,
+    "semantic_errors": 0
+  },
+  "errors": [
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 29, Column 1 (Position 625): [ERROR] Line 30, Column 7 (Position 632): Expected IDENTIFIER, got STRING",
+      "line": 29,
+      "column": 1
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 48, Column 9 (Position 1087): [ERROR] Line 48, Column 22 (Position 1100): Expected ARROW, got LBRACE",
+      "line": 48,
+      "column": 9
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 57, Column 9 (Position 1255): [ERROR] Line 57, Column 21 (Position 1267): Expected ARROW, got LBRACE",
+      "line": 57,
+      "column": 9
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 66, Column 9 (Position 1420): [ERROR] Line 66, Column 24 (Position 1435): Expected ARROW, got LBRACE",
+      "line": 66,
+      "column": 9
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 78, Column 34 (Position 1744): [ERROR] Line 79, Column 8 (Position 1752): Expected IDENTIFIER, got STRING",
+      "line": 78,
+      "column": 34
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 89, Column 27 (Position 1986): [ERROR] Line 90, Column 8 (Position 1994): Expected IDENTIFIER, got STRING",
+      "line": 89,
+      "column": 27
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 101, Column 32 (Position 2263): [ERROR] Line 102, Column 8 (Position 2271): Expected IDENTIFIER, got STRING",
+      "line": 101,
+      "column": 32
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 113, Column 30 (Position 2532): [ERROR] Line 114, Column 8 (Position 2540): Expected IDENTIFIER, got STRING",
+      "line": 113,
+      "column": 30
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 128, Column 1 (Position 2924): [ERROR] Line 129, Column 6 (Position 2930): Expected IDENTIFIER, got STRING",
+      "line": 128,
+      "column": 1
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 136, Column 1 (Position 3072): [ERROR] Line 137, Column 6 (Position 3078): Expected IDENTIFIER, got STRING",
+      "line": 136,
+      "column": 1
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 149, Column 1 (Position 3418): [ERROR] Line 150, Column 8 (Position 3426): Expected IDENTIFIER, got STRING",
+      "line": 149,
+      "column": 1
+    },
+    {
+      "type": "SYNTAX",
+      "message": "[ERROR] Line 150, Column 35 (Position 3453): [ERROR] Line 151, Column 8 (Position 3461): Expected IDENTIFIER, got STRING",
+      "line": 150,
+      "column": 35
+    }
+  ]
+}

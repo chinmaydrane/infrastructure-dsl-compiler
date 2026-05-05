@@ -1,10 +1,10 @@
 {
   "version": "1.0",
   "metadata": {
-    "generated_at": "2026-05-05T08:29:35.004570",
+    "generated_at": "2026-05-05T08:38:01.290680",
     "compiler_version": "1.0.0",
     "dsl_version": "1.0.0",
-    "resource_count": 3,
+    "resource_count": 5,
     "connection_count": 0,
     "policy_count": 0,
     "role_count": 0
@@ -56,6 +56,52 @@
         "column": 1
       }
     },
+    "app_server": {
+      "type": "server",
+      "name": "app_server",
+      "attributes": {
+        "cpu": {
+          "type": "literal",
+          "value": 4,
+          "literal_type": "integer",
+          "metadata": {
+            "line": 12,
+            "column": 11
+          }
+        },
+        "memory": {
+          "type": "literal",
+          "value": "8GB",
+          "literal_type": "string",
+          "metadata": {
+            "line": 13,
+            "column": 14
+          }
+        },
+        "os": {
+          "type": "literal",
+          "value": "ubuntu-20.04",
+          "literal_type": "string",
+          "metadata": {
+            "line": 14,
+            "column": 10
+          }
+        },
+        "enabled": {
+          "type": "literal",
+          "value": true,
+          "literal_type": "boolean",
+          "metadata": {
+            "line": 15,
+            "column": 15
+          }
+        }
+      },
+      "metadata": {
+        "line": 11,
+        "column": 1
+      }
+    },
     "primary_db": {
       "type": "database",
       "name": "primary_db",
@@ -65,7 +111,7 @@
           "value": "mysql",
           "literal_type": "string",
           "metadata": {
-            "line": 12,
+            "line": 19,
             "column": 14
           }
         },
@@ -74,16 +120,16 @@
           "value": "8.0",
           "literal_type": "string",
           "metadata": {
-            "line": 13,
+            "line": 20,
             "column": 15
           }
         },
         "storage": {
           "type": "literal",
-          "value": "100GB",
+          "value": "200GB",
           "literal_type": "string",
           "metadata": {
-            "line": 14,
+            "line": 21,
             "column": 15
           }
         },
@@ -92,22 +138,77 @@
           "value": "db.t3.medium",
           "literal_type": "string",
           "metadata": {
-            "line": 15,
+            "line": 22,
             "column": 22
           }
         },
         "backup_retention": {
           "type": "literal",
-          "value": 7,
+          "value": 14,
           "literal_type": "integer",
           "metadata": {
-            "line": 16,
+            "line": 23,
             "column": 24
           }
         }
       },
       "metadata": {
-        "line": 11,
+        "line": 18,
+        "column": 1
+      }
+    },
+    "cache_db": {
+      "type": "database",
+      "name": "cache_db",
+      "attributes": {
+        "engine": {
+          "type": "literal",
+          "value": "redis",
+          "literal_type": "string",
+          "metadata": {
+            "line": 27,
+            "column": 14
+          }
+        },
+        "version": {
+          "type": "literal",
+          "value": "6.0",
+          "literal_type": "string",
+          "metadata": {
+            "line": 28,
+            "column": 15
+          }
+        },
+        "storage": {
+          "type": "literal",
+          "value": "50GB",
+          "literal_type": "string",
+          "metadata": {
+            "line": 29,
+            "column": 15
+          }
+        },
+        "instance_class": {
+          "type": "literal",
+          "value": "cache.t3.micro",
+          "literal_type": "string",
+          "metadata": {
+            "line": 30,
+            "column": 22
+          }
+        },
+        "backup_retention": {
+          "type": "literal",
+          "value": 3,
+          "literal_type": "integer",
+          "metadata": {
+            "line": 31,
+            "column": 24
+          }
+        }
+      },
+      "metadata": {
+        "line": 26,
         "column": 1
       }
     },
@@ -120,7 +221,7 @@
           "value": "10.0.0.0/16",
           "literal_type": "string",
           "metadata": {
-            "line": 20,
+            "line": 35,
             "column": 18
           }
         },
@@ -129,7 +230,7 @@
           "value": true,
           "literal_type": "boolean",
           "metadata": {
-            "line": 21,
+            "line": 36,
             "column": 28
           }
         },
@@ -138,13 +239,13 @@
           "value": true,
           "literal_type": "boolean",
           "metadata": {
-            "line": 22,
+            "line": 37,
             "column": 26
           }
         }
       },
       "metadata": {
-        "line": 19,
+        "line": 34,
         "column": 1
       }
     }
